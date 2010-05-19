@@ -1,0 +1,32 @@
+== Auto Tweet for ExpressionEngine
+
+Allows you to set up automated tweeting of entries, based on a schedule.
+
+== Requirements
+
+* The the oAuth PECL extension (http://pecl.php.net/oauth)
+* PHP >= 5.2
+
+== Installation
+
+To install this module fully, you need to take the following steps. *If you already have a consumer key and consumer secret from Twitter, skip to step 2.*
+
+1) Register your website with Twitter (http://twitter.com/oauth_clients/new), setting "Application Type" set to "Client" and "Default Access Type" set to "Read & Write". The rest of the details are up to you.
+
+2) Add the "Consumer Key" and "Consumer Secret" you received from Twitter to your EE configuration file:
+
+# Twitter oAuth config
+$conf['twitter_oauth_consumer_key'] = 'myconsumerkey';
+$conf['twitter_oauth_consumer_secret'] = 'myconsumersecret';
+
+3) To automate the process, create a new template whose contents are a single tag (or use the provided one):
+
+{exp:auto_tweet:cron}
+
+4) Set up a cron job to ping that URL every hour. For example:
+
+* */1 * * * wget -q -O /dev/null http://my-site.com/cron/auto_tweet
+
+== Notes
+
+Upon installing, the Module will walk you through all of this before allowing you to set it up.
