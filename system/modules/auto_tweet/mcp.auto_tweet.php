@@ -655,7 +655,7 @@ class Auto_tweet_CP {
   	  "CREATE TABLE `{$this->posts_table}` (
          `entry_id` int(10) UNSIGNED NOT NULL,
          `site_id` int(10) UNSIGNED NOT NULL,
-         `cron_id` varchar(100) UNSIGNED NOT NULL,
+         `cron_id` varchar(100) NOT NULL,
          `weblog_id` int(10) UNSIGNED NOT NULL,
          `content` varchar(140) NOT NULL,
          `tweeted_at` int(10) UNSIGNED NOT NULL,
