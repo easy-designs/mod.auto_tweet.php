@@ -25,7 +25,7 @@ $conf['twitter_oauth_consumer_secret'] = 'myconsumersecret';
 
 4) Set up a cron job to ping that URL every hour. For example:
 
-* */1 * * * wget -q -O /dev/null http://my-site.com/cron/auto_tweet
+* */1 * * * wget -q -O /dev/null http://my-site.com/cron/auto-tweet
 
 == Notes
 
