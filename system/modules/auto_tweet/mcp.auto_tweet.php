@@ -268,7 +268,7 @@ class Auto_tweet_CP {
       $r .= $LANG->line('oAuth_instructions');
       $r .= '<p><a target="_blank" class="button" href="' . $this->auth_url . '?oauth_token=' . $response['oauth_token'] . '">';
       $r .= $LANG->line('authorize') . '</a></p>';
-      $r .= $DSP->form_open( array( 'action' => $this->getUrl('authorize') ) );
+      $r .= $DSP->form_open( array( 'action' => $this->getUrl('authorize',FALSE) ) );
       $r .= $DSP->div('form');
       $r .= '<label for="pin">' . $LANG->line( 'pin' ) . '</label> ' . $DSP->input_text( 'pin' );
       $r .= $DSP->input_submit( $LANG->line( 'submit' ) );
